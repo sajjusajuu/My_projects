@@ -1,0 +1,96 @@
+#include <iostream>
+#include <cstdio>
+#include <cstdlib>
+#include <vector>
+using namespace std;
+
+
+vector<int> g[100001];
+
+bool visited[100001];
+
+int dist[100001];
+
+inline int getint( ) {
+ 
+	int n=0;
+ 
+	int ch=getchar_unlocked();
+ 
+	while( ch <48 )ch=getchar_unlocked();
+ 
+	while( ch >47 )
+ 
+	n = (n<<3)+(n<<1) + ch-'0', ch=getchar_unlocked();
+ 
+	return n;
+ 
+}
+
+
+int main() {
+	int n, m;
+	n= getint();
+	m= getint();
+	
+	for(int i= 0; i<=n; i++) {
+		dist[i] = 99999999;
+		visited[i] = false;
+	}
+	
+	while(m--) {
+		int x, y;
+		x= getint();
+		y= getint();
+		g[x].push_back(y);
+		g[y].push_back(-x);
+	}
+	visited[1] = true;
+	int p = 0;
+	while(p < g[1].size()) {
+		if(g[1][p] > 0) dist[g[1][p]] = 0;
+		else {
+			if(dist[-g[1][p]] == 99999999)
+				dist[-g[1][p]] = 1;
+		}
+		p++;
+	}
+	dist[1] = 0;
+	int num = 1;
+	while( num < n) {
+		p = 1;
+		int min = 99999999;
+		int min_ver;
+		while(1) {
+			if(visited[p] == false) {
+				if(dist[p] < min) {
+					min_ver = p;
+					min = dist[p];
+				}
+			}
+			p++;
+			if( p > n) break;
+		}
+		if( min == 99999999)
+			break;
+		visited[min_ver] = true;
+		p = 0;
+		while( p < g[min_ver].size()) {
+			if( visited[g[min_ver][p]>0?g[min_ver][p]:-g[min_ver][p]] == false) {
+
+			 if( dist[g[min_ver][p]>0?g[min_ver][p]:-g[min_ver][p]]  > (dist[min_ver] + (g[min_ver][p]>0?0:1))) {
+				dist[g[min_ver][p]>0?g[min_ver][p]:-g[min_ver][p]] = (dist[min_ver] + (g[min_ver][p]>0?0:1));
+			 }
+			}
+			p++;
+		}
+		num++;
+	}
+	if( dist[n] == 99999999)
+		printf("-1\n");
+	else
+		printf("%d\n", dist[n]);
+	return 0;
+}
+	
+	
