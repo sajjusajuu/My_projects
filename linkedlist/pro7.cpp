@@ -55,7 +55,7 @@ int main() {
 		l1 = l1->ptr;
 	}
 	p = l3;
-	while( l1 & l2) {
+	while( l1 && l2) {
 		if(l1->data > l2->data) {
 			p->ptr = l2;
 			p = l2;
