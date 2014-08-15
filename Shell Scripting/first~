@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# my first shell script
+
+a=$1
+b=$2
+
+s=`expr $a + $b `
+echo "$s"
+
+exit 0

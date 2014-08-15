@@ -1,0 +1,11 @@
+#!/bin/bash
+
+read pass
+
+until [ "$pass" == "secret" ]
+do
+	echo "This is not correct password"
+	read pass
+done
+
+exit 0

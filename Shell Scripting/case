@@ -1,0 +1,14 @@
+#!/bin/bash
+
+
+echo "what time is today? Is it morn? answer in yes or no!"
+
+read time
+
+case "$time" in
+	yes | y | Yes | YES ) echo  "Good morning";;
+	No | no | n | N ) echo "Good afternoon";;
+	* ) echo "Did'nt get u";;
+esac
+
+exit 0
