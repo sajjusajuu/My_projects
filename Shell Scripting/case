@@ -11,4 +11,6 @@ case "$time" in
 	* ) echo "Did'nt get u";;
 esac
 
+
+
 exit 0

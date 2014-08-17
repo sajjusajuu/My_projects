@@ -87,7 +87,6 @@ int main() {
 				count++;
 			}
 			fastptr = fastptr->ptr;
-			count++;
 			while( fastptr != slowptr)	{
 				fastptr = fastptr->ptr;
 				count++;

@@ -1,5 +1,3 @@
-/* This is a prerequisite for any problems on linkedlist. This dicumentation contains the essential tools for creating a linked list*/
-
 // Written by Sajid Hussain, ISM DhanBad.
 
 

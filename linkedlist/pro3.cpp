@@ -1,5 +1,3 @@
-/* This is a prerequisite for any problems on linkedlist. This dicumentation contains the essential tools for creating a linked list*/
-
 // Written by Sajid Hussain, ISM DhanBad.
 
 // This is also called Floyed cycle finding algorithm along with returning the node where loop starts
