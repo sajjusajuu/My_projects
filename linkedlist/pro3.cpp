@@ -72,7 +72,7 @@ int main() {
 	listnode * slowptr = l, *fastptr = l;
 	bool loop = false;
 	int count = 1;
-	while(1 && fastptr->ptr && (fastptr->ptr)->ptr)  {
+	while(fastptr->ptr && (fastptr->ptr)->ptr)  {
 		slowptr = slowptr->ptr;
 		fastptr = (fastptr->ptr)->ptr;
 		if( slowptr == fastptr) {
